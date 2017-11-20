@@ -1,6 +1,5 @@
 import sys
 import getopt
-import os
 
 
 def main(argv):
@@ -49,6 +48,7 @@ def usage_string() -> str:
     usage = "{} \n\n -h\n Optional flag that prints usage of the script".format(usage)
     usage = "{} \n\n -m\n Path to map file".format(usage)
     usage = "{} \n\n -o\n Path to order file".format(usage)
+    usage = "{} \n\n -t\n Path to model template file".format(usage)
 
     return usage
 

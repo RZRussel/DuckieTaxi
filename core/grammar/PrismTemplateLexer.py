@@ -1,4 +1,4 @@
-# Generated from prism_template.g4 by ANTLR 4.7
+# Generated from PrismTemplate.g4 by ANTLR 4.7
 from antlr4 import *
 from io import StringIO
 from typing.io import TextIO
@@ -8,7 +8,7 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2^")
-        buf.write("\u028a\b\1\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7")
+        buf.write("\u0289\b\1\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7")
         buf.write("\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r")
         buf.write("\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23")
         buf.write("\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30")
@@ -47,16 +47,16 @@ def serializedATN():
         buf.write("9\39\39\3:\3:\3;\3;\3<\3<\3=\3=\3=\3>\3>\3?\3?\3@\3@\3")
         buf.write("A\3A\3B\3B\3B\3C\3C\3C\3D\3D\3E\3E\3F\3F\3G\3G\3G\3H\3")
         buf.write("H\3I\3I\3J\3J\3J\3K\3K\3K\3L\3L\3L\3M\3M\3M\3N\3N\3O\3")
-        buf.write("O\3P\3P\3Q\3Q\3R\3R\3S\3S\3S\3T\3T\3U\3U\3U\3V\3V\7V\u022d")
-        buf.write("\nV\fV\16V\u0230\13V\3V\5V\u0233\nV\3W\7W\u0236\nW\fW")
-        buf.write("\16W\u0239\13W\3W\5W\u023c\nW\3W\6W\u023f\nW\rW\16W\u0240")
-        buf.write("\3W\3W\5W\u0245\nW\3W\6W\u0248\nW\rW\16W\u0249\5W\u024c")
-        buf.write("\nW\3X\3X\7X\u0250\nX\fX\16X\u0253\13X\3X\3X\3Y\3Y\7Y")
-        buf.write("\u0259\nY\fY\16Y\u025c\13Y\3Z\3Z\7Z\u0260\nZ\fZ\16Z\u0263")
-        buf.write("\13Z\3Z\3Z\3[\6[\u0268\n[\r[\16[\u0269\3[\3[\3\\\3\\\3")
-        buf.write("\\\3\\\3\\\7\\\u0273\n\\\f\\\16\\\u0276\13\\\3\\\3\\\3")
-        buf.write("\\\3\\\3\\\3]\3]\3]\3]\7]\u0281\n]\f]\16]\u0284\13]\3")
-        buf.write("]\5]\u0287\n]\3]\3]\4\u0274\u0282\2^\3\3\5\4\7\5\t\6\13")
+        buf.write("O\3P\3P\3Q\3Q\3R\3R\3S\3S\3S\3T\3T\3U\3U\3V\3V\7V\u022c")
+        buf.write("\nV\fV\16V\u022f\13V\3V\5V\u0232\nV\3W\7W\u0235\nW\fW")
+        buf.write("\16W\u0238\13W\3W\5W\u023b\nW\3W\6W\u023e\nW\rW\16W\u023f")
+        buf.write("\3W\3W\5W\u0244\nW\3W\6W\u0247\nW\rW\16W\u0248\5W\u024b")
+        buf.write("\nW\3X\3X\7X\u024f\nX\fX\16X\u0252\13X\3X\3X\3Y\3Y\7Y")
+        buf.write("\u0258\nY\fY\16Y\u025b\13Y\3Z\3Z\7Z\u025f\nZ\fZ\16Z\u0262")
+        buf.write("\13Z\3Z\3Z\3[\6[\u0267\n[\r[\16[\u0268\3[\3[\3\\\3\\\3")
+        buf.write("\\\3\\\3\\\7\\\u0272\n\\\f\\\16\\\u0275\13\\\3\\\3\\\3")
+        buf.write("\\\3\\\3\\\3]\3]\3]\3]\7]\u0280\n]\f]\16]\u0283\13]\3")
+        buf.write("]\5]\u0286\n]\3]\3]\4\u0273\u0281\2^\3\3\5\4\7\5\t\6\13")
         buf.write("\7\r\b\17\t\21\n\23\13\25\f\27\r\31\16\33\17\35\20\37")
         buf.write("\21!\22#\23%\24\'\25)\26+\27-\30/\31\61\32\63\33\65\34")
         buf.write("\67\359\36;\37= ?!A\"C#E$G%I&K\'M(O)Q*S+U,W-Y.[/]\60_")
@@ -66,7 +66,7 @@ def serializedATN():
         buf.write("R\u00a3S\u00a5T\u00a7U\u00a9V\u00abW\u00adX\u00afY\u00b1")
         buf.write("Z\u00b3[\u00b5\\\u00b7]\u00b9^\3\2\13\3\2\63;\3\2\62;")
         buf.write("\5\2..GGgg\3\2-/\5\2C\\aac|\6\2\62;C\\aac|\3\2%%\5\2\2")
-        buf.write("\2\13\17\"\"\3\3\f\f\2\u0298\2\3\3\2\2\2\2\5\3\2\2\2\2")
+        buf.write("\2\13\17\"\"\3\3\f\f\2\u0297\2\3\3\2\2\2\2\5\3\2\2\2\2")
         buf.write("\7\3\2\2\2\2\t\3\2\2\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3")
         buf.write("\2\2\2\2\21\3\2\2\2\2\23\3\2\2\2\2\25\3\2\2\2\2\27\3\2")
         buf.write("\2\2\2\31\3\2\2\2\2\33\3\2\2\2\2\35\3\2\2\2\2\37\3\2\2")
@@ -114,10 +114,10 @@ def serializedATN():
         buf.write("\3\2\2\2\u009b\u0218\3\2\2\2\u009d\u021a\3\2\2\2\u009f")
         buf.write("\u021c\3\2\2\2\u00a1\u021e\3\2\2\2\u00a3\u0220\3\2\2\2")
         buf.write("\u00a5\u0222\3\2\2\2\u00a7\u0225\3\2\2\2\u00a9\u0227\3")
-        buf.write("\2\2\2\u00ab\u0232\3\2\2\2\u00ad\u0237\3\2\2\2\u00af\u024d")
-        buf.write("\3\2\2\2\u00b1\u0256\3\2\2\2\u00b3\u025d\3\2\2\2\u00b5")
-        buf.write("\u0267\3\2\2\2\u00b7\u026d\3\2\2\2\u00b9\u027c\3\2\2\2")
-        buf.write("\u00bb\u00bc\7B\2\2\u00bc\4\3\2\2\2\u00bd\u00be\7C\2\2")
+        buf.write("\2\2\2\u00ab\u0231\3\2\2\2\u00ad\u0236\3\2\2\2\u00af\u024c")
+        buf.write("\3\2\2\2\u00b1\u0255\3\2\2\2\u00b3\u025c\3\2\2\2\u00b5")
+        buf.write("\u0266\3\2\2\2\u00b7\u026c\3\2\2\2\u00b9\u027b\3\2\2\2")
+        buf.write("\u00bb\u00bc\7C\2\2\u00bc\4\3\2\2\2\u00bd\u00be\7B\2\2")
         buf.write("\u00be\6\3\2\2\2\u00bf\u00c0\7d\2\2\u00c0\u00c1\7q\2\2")
         buf.write("\u00c1\u00c2\7q\2\2\u00c2\u00c3\7n\2\2\u00c3\b\3\2\2\2")
         buf.write("\u00c4\u00c5\7e\2\2\u00c5\u00c6\7n\2\2\u00c6\u00c7\7q")
@@ -239,61 +239,61 @@ def serializedATN():
         buf.write("\u021f\u00a2\3\2\2\2\u0220\u0221\7)\2\2\u0221\u00a4\3")
         buf.write("\2\2\2\u0222\u0223\7>\2\2\u0223\u0224\7/\2\2\u0224\u00a6")
         buf.write("\3\2\2\2\u0225\u0226\7A\2\2\u0226\u00a8\3\2\2\2\u0227")
-        buf.write("\u0228\7^\2\2\u0228\u0229\7$\2\2\u0229\u00aa\3\2\2\2\u022a")
-        buf.write("\u022e\t\2\2\2\u022b\u022d\t\3\2\2\u022c\u022b\3\2\2\2")
-        buf.write("\u022d\u0230\3\2\2\2\u022e\u022c\3\2\2\2\u022e\u022f\3")
-        buf.write("\2\2\2\u022f\u0233\3\2\2\2\u0230\u022e\3\2\2\2\u0231\u0233")
-        buf.write("\7\62\2\2\u0232\u022a\3\2\2\2\u0232\u0231\3\2\2\2\u0233")
-        buf.write("\u00ac\3\2\2\2\u0234\u0236\t\3\2\2\u0235\u0234\3\2\2\2")
-        buf.write("\u0236\u0239\3\2\2\2\u0237\u0235\3\2\2\2\u0237\u0238\3")
-        buf.write("\2\2\2\u0238\u023b\3\2\2\2\u0239\u0237\3\2\2\2\u023a\u023c")
-        buf.write("\7\60\2\2\u023b\u023a\3\2\2\2\u023b\u023c\3\2\2\2\u023c")
-        buf.write("\u023e\3\2\2\2\u023d\u023f\t\3\2\2\u023e\u023d\3\2\2\2")
-        buf.write("\u023f\u0240\3\2\2\2\u0240\u023e\3\2\2\2\u0240\u0241\3")
-        buf.write("\2\2\2\u0241\u024b\3\2\2\2\u0242\u0244\t\4\2\2\u0243\u0245")
-        buf.write("\t\5\2\2\u0244\u0243\3\2\2\2\u0244\u0245\3\2\2\2\u0245")
-        buf.write("\u0247\3\2\2\2\u0246\u0248\t\3\2\2\u0247\u0246\3\2\2\2")
-        buf.write("\u0248\u0249\3\2\2\2\u0249\u0247\3\2\2\2\u0249\u024a\3")
-        buf.write("\2\2\2\u024a\u024c\3\2\2\2\u024b\u0242\3\2\2\2\u024b\u024c")
-        buf.write("\3\2\2\2\u024c\u00ae\3\2\2\2\u024d\u0251\t\6\2\2\u024e")
-        buf.write("\u0250\t\7\2\2\u024f\u024e\3\2\2\2\u0250\u0253\3\2\2\2")
-        buf.write("\u0251\u024f\3\2\2\2\u0251\u0252\3\2\2\2\u0252\u0254\3")
-        buf.write("\2\2\2\u0253\u0251\3\2\2\2\u0254\u0255\7)\2\2\u0255\u00b0")
-        buf.write("\3\2\2\2\u0256\u025a\t\6\2\2\u0257\u0259\t\7\2\2\u0258")
-        buf.write("\u0257\3\2\2\2\u0259\u025c\3\2\2\2\u025a\u0258\3\2\2\2")
-        buf.write("\u025a\u025b\3\2\2\2\u025b\u00b2\3\2\2\2\u025c\u025a\3")
-        buf.write("\2\2\2\u025d\u0261\7%\2\2\u025e\u0260\n\b\2\2\u025f\u025e")
-        buf.write("\3\2\2\2\u0260\u0263\3\2\2\2\u0261\u025f\3\2\2\2\u0261")
-        buf.write("\u0262\3\2\2\2\u0262\u0264\3\2\2\2\u0263\u0261\3\2\2\2")
-        buf.write("\u0264\u0265\7%\2\2\u0265\u00b4\3\2\2\2\u0266\u0268\t")
-        buf.write("\t\2\2\u0267\u0266\3\2\2\2\u0268\u0269\3\2\2\2\u0269\u0267")
-        buf.write("\3\2\2\2\u0269\u026a\3\2\2\2\u026a\u026b\3\2\2\2\u026b")
-        buf.write("\u026c\b[\2\2\u026c\u00b6\3\2\2\2\u026d\u026e\7\61\2\2")
-        buf.write("\u026e\u026f\7,\2\2\u026f\u0274\3\2\2\2\u0270\u0273\5")
-        buf.write("\u00b7\\\2\u0271\u0273\13\2\2\2\u0272\u0270\3\2\2\2\u0272")
-        buf.write("\u0271\3\2\2\2\u0273\u0276\3\2\2\2\u0274\u0275\3\2\2\2")
-        buf.write("\u0274\u0272\3\2\2\2\u0275\u0277\3\2\2\2\u0276\u0274\3")
-        buf.write("\2\2\2\u0277\u0278\7,\2\2\u0278\u0279\7\61\2\2\u0279\u027a")
-        buf.write("\3\2\2\2\u027a\u027b\b\\\2\2\u027b\u00b8\3\2\2\2\u027c")
-        buf.write("\u027d\7\61\2\2\u027d\u027e\7\61\2\2\u027e\u0282\3\2\2")
-        buf.write("\2\u027f\u0281\13\2\2\2\u0280\u027f\3\2\2\2\u0281\u0284")
-        buf.write("\3\2\2\2\u0282\u0283\3\2\2\2\u0282\u0280\3\2\2\2\u0283")
-        buf.write("\u0286\3\2\2\2\u0284\u0282\3\2\2\2\u0285\u0287\t\n\2\2")
-        buf.write("\u0286\u0285\3\2\2\2\u0287\u0288\3\2\2\2\u0288\u0289\b")
-        buf.write("]\2\2\u0289\u00ba\3\2\2\2\23\2\u022e\u0232\u0237\u023b")
-        buf.write("\u0240\u0244\u0249\u024b\u0251\u025a\u0261\u0269\u0272")
-        buf.write("\u0274\u0282\u0286\3\2\3\2")
+        buf.write("\u0228\7$\2\2\u0228\u00aa\3\2\2\2\u0229\u022d\t\2\2\2")
+        buf.write("\u022a\u022c\t\3\2\2\u022b\u022a\3\2\2\2\u022c\u022f\3")
+        buf.write("\2\2\2\u022d\u022b\3\2\2\2\u022d\u022e\3\2\2\2\u022e\u0232")
+        buf.write("\3\2\2\2\u022f\u022d\3\2\2\2\u0230\u0232\7\62\2\2\u0231")
+        buf.write("\u0229\3\2\2\2\u0231\u0230\3\2\2\2\u0232\u00ac\3\2\2\2")
+        buf.write("\u0233\u0235\t\3\2\2\u0234\u0233\3\2\2\2\u0235\u0238\3")
+        buf.write("\2\2\2\u0236\u0234\3\2\2\2\u0236\u0237\3\2\2\2\u0237\u023a")
+        buf.write("\3\2\2\2\u0238\u0236\3\2\2\2\u0239\u023b\7\60\2\2\u023a")
+        buf.write("\u0239\3\2\2\2\u023a\u023b\3\2\2\2\u023b\u023d\3\2\2\2")
+        buf.write("\u023c\u023e\t\3\2\2\u023d\u023c\3\2\2\2\u023e\u023f\3")
+        buf.write("\2\2\2\u023f\u023d\3\2\2\2\u023f\u0240\3\2\2\2\u0240\u024a")
+        buf.write("\3\2\2\2\u0241\u0243\t\4\2\2\u0242\u0244\t\5\2\2\u0243")
+        buf.write("\u0242\3\2\2\2\u0243\u0244\3\2\2\2\u0244\u0246\3\2\2\2")
+        buf.write("\u0245\u0247\t\3\2\2\u0246\u0245\3\2\2\2\u0247\u0248\3")
+        buf.write("\2\2\2\u0248\u0246\3\2\2\2\u0248\u0249\3\2\2\2\u0249\u024b")
+        buf.write("\3\2\2\2\u024a\u0241\3\2\2\2\u024a\u024b\3\2\2\2\u024b")
+        buf.write("\u00ae\3\2\2\2\u024c\u0250\t\6\2\2\u024d\u024f\t\7\2\2")
+        buf.write("\u024e\u024d\3\2\2\2\u024f\u0252\3\2\2\2\u0250\u024e\3")
+        buf.write("\2\2\2\u0250\u0251\3\2\2\2\u0251\u0253\3\2\2\2\u0252\u0250")
+        buf.write("\3\2\2\2\u0253\u0254\7)\2\2\u0254\u00b0\3\2\2\2\u0255")
+        buf.write("\u0259\t\6\2\2\u0256\u0258\t\7\2\2\u0257\u0256\3\2\2\2")
+        buf.write("\u0258\u025b\3\2\2\2\u0259\u0257\3\2\2\2\u0259\u025a\3")
+        buf.write("\2\2\2\u025a\u00b2\3\2\2\2\u025b\u0259\3\2\2\2\u025c\u0260")
+        buf.write("\7%\2\2\u025d\u025f\n\b\2\2\u025e\u025d\3\2\2\2\u025f")
+        buf.write("\u0262\3\2\2\2\u0260\u025e\3\2\2\2\u0260\u0261\3\2\2\2")
+        buf.write("\u0261\u0263\3\2\2\2\u0262\u0260\3\2\2\2\u0263\u0264\7")
+        buf.write("%\2\2\u0264\u00b4\3\2\2\2\u0265\u0267\t\t\2\2\u0266\u0265")
+        buf.write("\3\2\2\2\u0267\u0268\3\2\2\2\u0268\u0266\3\2\2\2\u0268")
+        buf.write("\u0269\3\2\2\2\u0269\u026a\3\2\2\2\u026a\u026b\b[\2\2")
+        buf.write("\u026b\u00b6\3\2\2\2\u026c\u026d\7\61\2\2\u026d\u026e")
+        buf.write("\7,\2\2\u026e\u0273\3\2\2\2\u026f\u0272\5\u00b7\\\2\u0270")
+        buf.write("\u0272\13\2\2\2\u0271\u026f\3\2\2\2\u0271\u0270\3\2\2")
+        buf.write("\2\u0272\u0275\3\2\2\2\u0273\u0274\3\2\2\2\u0273\u0271")
+        buf.write("\3\2\2\2\u0274\u0276\3\2\2\2\u0275\u0273\3\2\2\2\u0276")
+        buf.write("\u0277\7,\2\2\u0277\u0278\7\61\2\2\u0278\u0279\3\2\2\2")
+        buf.write("\u0279\u027a\b\\\2\2\u027a\u00b8\3\2\2\2\u027b\u027c\7")
+        buf.write("\61\2\2\u027c\u027d\7\61\2\2\u027d\u0281\3\2\2\2\u027e")
+        buf.write("\u0280\13\2\2\2\u027f\u027e\3\2\2\2\u0280\u0283\3\2\2")
+        buf.write("\2\u0281\u0282\3\2\2\2\u0281\u027f\3\2\2\2\u0282\u0285")
+        buf.write("\3\2\2\2\u0283\u0281\3\2\2\2\u0284\u0286\t\n\2\2\u0285")
+        buf.write("\u0284\3\2\2\2\u0286\u0287\3\2\2\2\u0287\u0288\b]\2\2")
+        buf.write("\u0288\u00ba\3\2\2\2\23\2\u022d\u0231\u0236\u023a\u023f")
+        buf.write("\u0243\u0248\u024a\u0250\u0259\u0260\u0268\u0271\u0273")
+        buf.write("\u0281\u0285\3\2\3\2")
         return buf.getvalue()
 
 
-class prism_templateLexer(Lexer):
+class PrismTemplateLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
     decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
 
-    T__0 = 1
-    A = 2
+    A = 1
+    AT = 2
     BOOL = 3
     CLOCK = 4
     CONST = 5
@@ -390,7 +390,7 @@ class prism_templateLexer(Lexer):
     modeNames = [ "DEFAULT_MODE" ]
 
     literalNames = [ "<INVALID>",
-            "'@'", "'A'", "'bool'", "'clock'", "'const'", "'ctmc'", "'C'", 
+            "'A'", "'@'", "'bool'", "'clock'", "'const'", "'ctmc'", "'C'", 
             "'double'", "'dtmc'", "'E'", "'endinit'", "'endinvariant'", 
             "'endmodule'", "'endrewards'", "'endsystem'", "'false'", "'formula'", 
             "'filter'", "'func'", "'F'", "'global'", "'G'", "'init'", "'invariant'", 
@@ -401,24 +401,24 @@ class prism_templateLexer(Lexer):
             "'!'", "'&'", "'|'", "'=>'", "'<=>'", "'->'", "':'", "';'", 
             "','", "'..'", "'('", "')'", "'['", "']'", "'[['", "']]'", "'{'", 
             "'}'", "'='", "'!='", "'<'", "'>'", "'<<'", "'>>'", "'<='", 
-            "'>='", "'+'", "'-'", "'*'", "'/'", "'''", "'<-'", "'?'", "'\\\"'" ]
+            "'>='", "'+'", "'-'", "'*'", "'/'", "'''", "'<-'", "'?'", "'\"'" ]
 
     symbolicNames = [ "<INVALID>",
-            "A", "BOOL", "CLOCK", "CONST", "CTMC", "C", "DOUBLE", "DTMC", 
-            "E", "ENDINIT", "ENDINVARIANT", "ENDMODULE", "ENDREWARDS", "ENDSYSTEM", 
-            "FALSE", "FORMULA", "FILTER", "FUNC", "F", "GLOBAL", "G", "INIT", 
-            "INVARIANT", "I", "INT", "LABEL", "MAX", "MDP", "MIN", "MODULE", 
-            "X", "NONDETERMINISTIC", "PMAX", "PMIN", "P", "PROBABILISTIC", 
-            "PROB", "PTA", "RATE", "REWARDS", "RMAX", "RMIN", "R", "S", 
-            "STOCHASTIC", "SYSTEM", "TRUE", "U", "W", "NOT", "AND", "OR", 
-            "IMPLIES", "IFF", "RARROW", "COLON", "SEMICOLON", "COMMA", "DOTS", 
-            "LPARENTH", "RPARENTH", "LBRACKET", "RBRACKET", "DLBRACKET", 
+            "A", "AT", "BOOL", "CLOCK", "CONST", "CTMC", "C", "DOUBLE", 
+            "DTMC", "E", "ENDINIT", "ENDINVARIANT", "ENDMODULE", "ENDREWARDS", 
+            "ENDSYSTEM", "FALSE", "FORMULA", "FILTER", "FUNC", "F", "GLOBAL", 
+            "G", "INIT", "INVARIANT", "I", "INT", "LABEL", "MAX", "MDP", 
+            "MIN", "MODULE", "X", "NONDETERMINISTIC", "PMAX", "PMIN", "P", 
+            "PROBABILISTIC", "PROB", "PTA", "RATE", "REWARDS", "RMAX", "RMIN", 
+            "R", "S", "STOCHASTIC", "SYSTEM", "TRUE", "U", "W", "NOT", "AND", 
+            "OR", "IMPLIES", "IFF", "RARROW", "COLON", "SEMICOLON", "COMMA", 
+            "DOTS", "LPARENTH", "RPARENTH", "LBRACKET", "RBRACKET", "DLBRACKET", 
             "DRBRACKET", "LBRACE", "RBRACE", "EQ", "NE", "LT", "GT", "DLT", 
             "DGT", "LE", "GE", "PLUS", "MINUS", "TIMES", "DIVIDE", "PRIME", 
             "RENAME", "QMARK", "DQUOTE", "REG_INT", "REG_DOUBLE", "REG_IDENTPRIME", 
             "REG_IDENT", "PREPROC", "WS", "Block_comment", "Line_comment" ]
 
-    ruleNames = [ "T__0", "A", "BOOL", "CLOCK", "CONST", "CTMC", "C", "DOUBLE", 
+    ruleNames = [ "A", "AT", "BOOL", "CLOCK", "CONST", "CTMC", "C", "DOUBLE", 
                   "DTMC", "E", "ENDINIT", "ENDINVARIANT", "ENDMODULE", "ENDREWARDS", 
                   "ENDSYSTEM", "FALSE", "FORMULA", "FILTER", "FUNC", "F", 
                   "GLOBAL", "G", "INIT", "INVARIANT", "I", "INT", "LABEL", 
@@ -434,7 +434,7 @@ class prism_templateLexer(Lexer):
                   "REG_IDENTPRIME", "REG_IDENT", "PREPROC", "WS", "Block_comment", 
                   "Line_comment" ]
 
-    grammarFileName = "prism_template.g4"
+    grammarFileName = "PrismTemplate.g4"
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)

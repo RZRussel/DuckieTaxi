@@ -1,7 +1,8 @@
-grammar prism_template;
+grammar PrismTemplate;
 
 // Tokens
 A : 'A';
+AT : '@';
 BOOL : 'bool';
 CLOCK : 'clock';
 CONST : 'const';
@@ -83,7 +84,7 @@ DIVIDE : '/';
 PRIME : '\'';
 RENAME : '<-';
 QMARK : '?';
-DQUOTE : '\\"';
+DQUOTE : '"';
 REG_INT : ([1-9]([0-9])*)|('0');
 REG_DOUBLE : ([0-9])*('.')?([0-9])+([e,E]([-,+])?([0-9])+)?;
 REG_IDENTPRIME : [_a-zA-Z]([_a-zA-Z0-9])*'\'';
@@ -125,23 +126,23 @@ statements : model_type? common_declarations? module_declarations init_declarati
 
 model_type : DTMC | CTMC | MDP | PTA;
 
-common_declarations : common_declaration common_declarations;
+common_declarations : common_declaration common_declarations?;
 
-common_declaration : global_declaration | constant_declaration | formula_declaration | label_declaration;
+common_declaration : global_declaration | constant_declaration | formula_declaration;
 
 constant_declaration : CONST (INT | DOUBLE | BOOL) REG_IDENT EQ (expression | replacement) SEMICOLON;
 
 formula_declaration : FORMULA REG_IDENT EQ (expression | replacement) SEMICOLON;
 
-label_declaration : LABEL DQUOTE REG_IDENT DQUOTE EQ expression SEMICOLON;
-
 global_declaration : GLOBAL var_declaration;
 
 init_declaration : INIT expression ENDINIT;
 
-module_declarations : MODULE module_content ENDMODULE;
+module_declarations : module_declaration module_declarations?;
 
-module_content : module_desc | module_rename;
+module_declaration : MODULE module_content ENDMODULE;
+
+module_content : REG_IDENT module_desc | module_rename;
 
 module_rename : id_assign id_assign_block?;
 
@@ -167,4 +168,4 @@ guard_update : expression COLON state_update;
 
 state_update : LPARENTH REG_IDENTPRIME EQ expression RPARENTH;
 
-replacement : '@'REG_IDENT'@';
+replacement : AT(REG_IDENT)AT;

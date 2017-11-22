@@ -17,6 +17,33 @@ class PrismTemplateListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PrismTemplateParser#identifier.
+    def enterIdentifier(self, ctx:PrismTemplateParser.IdentifierContext):
+        pass
+
+    # Exit a parse tree produced by PrismTemplateParser#identifier.
+    def exitIdentifier(self, ctx:PrismTemplateParser.IdentifierContext):
+        pass
+
+
+    # Enter a parse tree produced by PrismTemplateParser#identifier_prime.
+    def enterIdentifier_prime(self, ctx:PrismTemplateParser.Identifier_primeContext):
+        pass
+
+    # Exit a parse tree produced by PrismTemplateParser#identifier_prime.
+    def exitIdentifier_prime(self, ctx:PrismTemplateParser.Identifier_primeContext):
+        pass
+
+
+    # Enter a parse tree produced by PrismTemplateParser#native_type.
+    def enterNative_type(self, ctx:PrismTemplateParser.Native_typeContext):
+        pass
+
+    # Exit a parse tree produced by PrismTemplateParser#native_type.
+    def exitNative_type(self, ctx:PrismTemplateParser.Native_typeContext):
+        pass
+
+
     # Enter a parse tree produced by PrismTemplateParser#program.
     def enterProgram(self, ctx:PrismTemplateParser.ProgramContext):
         pass
@@ -77,6 +104,15 @@ class PrismTemplateListener(ParseTreeListener):
 
     # Exit a parse tree produced by PrismTemplateParser#formula_declaration.
     def exitFormula_declaration(self, ctx:PrismTemplateParser.Formula_declarationContext):
+        pass
+
+
+    # Enter a parse tree produced by PrismTemplateParser#expr_or_replacement.
+    def enterExpr_or_replacement(self, ctx:PrismTemplateParser.Expr_or_replacementContext):
+        pass
+
+    # Exit a parse tree produced by PrismTemplateParser#expr_or_replacement.
+    def exitExpr_or_replacement(self, ctx:PrismTemplateParser.Expr_or_replacementContext):
         pass
 
 
@@ -221,6 +257,15 @@ class PrismTemplateListener(ParseTreeListener):
 
     # Exit a parse tree produced by PrismTemplateParser#guard_update.
     def exitGuard_update(self, ctx:PrismTemplateParser.Guard_updateContext):
+        pass
+
+
+    # Enter a parse tree produced by PrismTemplateParser#state_updates.
+    def enterState_updates(self, ctx:PrismTemplateParser.State_updatesContext):
+        pass
+
+    # Exit a parse tree produced by PrismTemplateParser#state_updates.
+    def exitState_updates(self, ctx:PrismTemplateParser.State_updatesContext):
         pass
 
 

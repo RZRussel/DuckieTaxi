@@ -97,7 +97,7 @@ Line_comment : '//' .*? ('\n'|EOF)				-> channel(HIDDEN) ;
 
 expression :
 LPARENTH expression RPARENTH
-| expression COLON expression
+| expression QMARK expression COLON expression
 | expression IMPLIES expression
 | expression IFF expression
 | expression OR expression
@@ -120,6 +120,12 @@ LPARENTH expression RPARENTH
 | TRUE
 | FALSE;
 
+identifier : REG_IDENT;
+
+identifier_prime : REG_IDENTPRIME;
+
+native_type : INT | DOUBLE | BOOL;
+
 program : statements? EOF;
 
 statements : model_type? common_declarations? module_declarations init_declaration?;
@@ -130,9 +136,11 @@ common_declarations : common_declaration common_declarations?;
 
 common_declaration : global_declaration | constant_declaration | formula_declaration;
 
-constant_declaration : CONST (INT | DOUBLE | BOOL) REG_IDENT EQ (expression | replacement) SEMICOLON;
+constant_declaration : CONST native_type identifier EQ expr_or_replacement SEMICOLON;
 
-formula_declaration : FORMULA REG_IDENT EQ (expression | replacement) SEMICOLON;
+formula_declaration : FORMULA identifier EQ expr_or_replacement SEMICOLON;
+
+expr_or_replacement : expression | replacement;
 
 global_declaration : GLOBAL var_declaration;
 
@@ -142,11 +150,11 @@ module_declarations : module_declaration module_declarations?;
 
 module_declaration : MODULE module_content ENDMODULE;
 
-module_content : REG_IDENT module_desc | module_rename;
+module_content : identifier module_desc | module_rename;
 
 module_rename : id_assign id_assign_block?;
 
-id_assign : REG_IDENT EQ REG_IDENT;
+id_assign : identifier EQ identifier;
 
 id_assign_block : LBRACKET id_assign (COMMA id_assign)* RBRACKET;
 
@@ -154,18 +162,20 @@ module_desc : var_declarations? guard_declarations?;
 
 var_declarations : var_declaration var_declarations?;
 
-var_declaration : REG_IDENT COLON (INT | DOUBLE | BOOL | range_declaration) SEMICOLON;
+var_declaration : identifier COLON (native_type | range_declaration) SEMICOLON;
 
 range_declaration : LBRACKET expression DOTS expression RBRACKET;
 
 guard_declarations: (guard_declaration | replacement) guard_declarations?;
 
-guard_declaration : LBRACKET REG_IDENT RBRACKET expression RARROW (state_update | guard_updates) SEMICOLON;
+guard_declaration : LBRACKET identifier? RBRACKET expression RARROW (state_updates | guard_updates) SEMICOLON;
 
 guard_updates : guard_update (PLUS guard_updates)?;
 
-guard_update : expression COLON state_update;
+guard_update : expression COLON state_updates;
 
-state_update : LPARENTH REG_IDENTPRIME EQ expression RPARENTH;
+state_updates : state_update (AND state_updates)?;
 
-replacement : AT(REG_IDENT)AT;
+state_update : LPARENTH identifier_prime EQ expression RPARENTH;
+
+replacement : AT(identifier)AT;

@@ -1,8 +1,8 @@
-from pygraph import DirectedGraph
+from pygraph.classes.digraph import digraph
 
 
 class MapSpecification:
-    def __init__(self, graph: DirectedGraph, max_x: int, max_y: int):
+    def __init__(self, graph: digraph, max_x: int, max_y: int):
         self._graph = graph
         self._max_x = max_x
         self._max_y = max_y

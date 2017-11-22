@@ -1,5 +1,5 @@
-from pygraph import DirectedGraph
 from core.specification import MapSpecification, OrderSpecification
+from pygraph.classes.digraph import digraph
 
 
 class BaseParser:
@@ -12,10 +12,11 @@ class BaseParser:
 
     @staticmethod
     def _parse_int(s: str) -> int:
-        if s.isdigit():
+        cleared_str = s.strip(" \n\r\t")
+        if not cleared_str.isdigit():
             raise ValueError("Integer expected but arbitrary string received")
 
-        return int(s)
+        return int(cleared_str)
 
 
 class MapParser(BaseParser):
@@ -28,10 +29,10 @@ class MapParser(BaseParser):
 
         edge_count = self._parse_int(file.readline())
 
-        graph = DirectedGraph()
+        graph = digraph()
 
-        for _ in range(0, (max_x + 1)*(max_y + 1)):
-            graph.new_node()
+        for i in range(0, (max_x + 1)*(max_y + 1)):
+            graph.add_node(i)
 
         for _ in range(0, edge_count):
             edge = file.readline().split()
@@ -44,7 +45,7 @@ class MapParser(BaseParser):
             x2 = self._parse_int(edge[2])
             y2 = self._parse_int(edge[3])
 
-            graph.new_edge(y1*(max_x + 1) + x1, y2*(max_x + 1) + x2)
+            graph.add_edge((y1*(max_x + 1) + x1, y2*(max_x + 1) + x2))
 
         self._specification = MapSpecification(graph, max_x, max_y)
 
@@ -70,7 +71,3 @@ class OrderParser(BaseParser):
     @property
     def specification(self) -> OrderSpecification:
         return self._specification
-
-
-class TemplateParser(BaseParser):
-    pass

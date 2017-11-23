@@ -97,7 +97,6 @@ Line_comment : '//' .*? ('\n'|EOF)				-> channel(HIDDEN) ;
 
 expression :
 LPARENTH expression RPARENTH
-| expression QMARK expression COLON expression
 | expression IMPLIES expression
 | expression IFF expression
 | expression OR expression

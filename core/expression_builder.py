@@ -30,7 +30,10 @@ class ExpressionBuilder:
         self.expression = UnaryOperation("!", self.expression)
 
     def append_imply(self, expression):
-        self.expression = BinaryOperation("->", self.expression, expression)
+        self.expression = BinaryOperation("=>", self.expression, expression)
+
+    def append_iff(self, expression):
+        self.expression = BinaryOperation("<=>", self.expression, expression)
 
     def wrap_next(self):
         self.expression = Identifier("{}\'".format(str(self.expression)))
@@ -40,6 +43,9 @@ class ExpressionBuilder:
 
     def append_eq(self, expression):
         self.expression = BinaryOperation("=", self.expression, expression)
+
+    def append_neq(self, expression):
+        self.expression = BinaryOperation("!=", self.expression, expression)
 
     def append_lt(self, expression):
         self.expression = BinaryOperation("<", self.expression, expression)

@@ -7,7 +7,7 @@ class PrismReplacementsGatherer(PrismTemplateListener):
     replacements = []
 
     def exitReplacement(self, ctx: PrismTemplateParser.ReplacementContext):
-        self.replacements.append(str(ctx.identifier()))
+        self.replacements.append(ctx.identifier().getText())
 
 
 class PrismErrorListener(ErrorListener):

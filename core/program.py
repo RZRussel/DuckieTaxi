@@ -57,3 +57,22 @@ class Constant:
 class Init:
     def __init__(self, expression):
         self._expression = expression
+
+
+class GuardDeclaration:
+    def __init__(self, label, expression, updates):
+        self._label = label
+        self._expression = expression
+        self._updates = updates
+
+
+class GuardUpdate:
+    def __init__(self, expression, state_updates):
+        self._expression = expression
+        self._state_updates = state_updates
+
+
+class StateUpdate:
+    def __init__(self, identifier, expression):
+        self._identifier = identifier
+        self._expression = expression

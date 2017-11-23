@@ -156,8 +156,9 @@ class TaxiCompiler(PrismTemplateVisitor):
 
     def visitId_assign_block(self, ctx: PrismTemplateParser.Id_assign_blockContext):
         assigns = []
-        for i in range(0, ctx.getChildCount()):
-            assigns.append(self.visit(ctx.id_assign(i)))
+        for child in ctx.children:
+            if isinstance(child, PrismTemplateParser.Id_assignContext):
+                assigns.append(self.visit(child))
 
         return assigns
 
@@ -260,7 +261,7 @@ class TaxiCompiler(PrismTemplateVisitor):
         method = ctx.identifier().getText()
         code = getattr(self._generator, method)()
 
-        return Identifier(code)
+        return Identifier(str(code))
 
     def visitIdentifier(self, ctx: PrismTemplateParser.IdentifierContext):
         return Identifier(ctx.getText())

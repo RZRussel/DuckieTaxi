@@ -34,7 +34,7 @@ class TestTemplateParser(TestCase):
         self.assertTrue("move" in listener.replacements)
         self.assertTrue("max_x" in listener.replacements)
         self.assertTrue("max_y" in listener.replacements)
-        self.assertTrue("max_dir" in listener.replacements)
+        self.assertTrue("max_direction" in listener.replacements)
 
 
 class TestMapParser(TestCase):

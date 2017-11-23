@@ -1,13 +1,15 @@
+mdp
+
 formula max_x = @max_x@;
 formula max_y = @max_y@;
 global g_var: [1+1...2+2];
-formula max_dir = @max_dir@;
+formula max_direction = @max_direction@;
 const int N = max_x*max_x + max_y*max_y - max_dir/2.0;
 
 module Taxi
 	x: [0..max_x];
 	y: [0..max_y];
-	direction: [0..max_dir];
+	direction: [0..max_direction];
 
 	@move@
 

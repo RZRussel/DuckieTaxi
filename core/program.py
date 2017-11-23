@@ -39,7 +39,9 @@ class Program(BaseCode):
             result = str(self._model)
 
         if self._common_declarations is not None:
-            result = "{}\n".format(result)
+            if len(result) > 0:
+                result = "{}\n".format(result)
+
             for common_declaration in self._common_declarations:
                 if len(result) > 0:
                     result = "{}\n{}".format(result, str(common_declaration))
@@ -93,7 +95,7 @@ class ModuleDesc(BaseCode):
         module_token = self.token_at(PrismTemplateLexer.MODULE)
         endmodule_token = self.token_at(PrismTemplateLexer.ENDMODULE)
 
-        result = "{} {}\n".format(module_token, str(self._name))
+        result = "{} {}".format(module_token, str(self._name))
 
         if self._var_declarations is not None:
             for var_declaration in self._var_declarations:
@@ -104,7 +106,7 @@ class ModuleDesc(BaseCode):
             for guard_declaration in self._guard_declarations:
                 result = "{}\n  {}".format(result, str(guard_declaration))
 
-        return "{}\n{}".format(result, endmodule_token)
+        return "{}\n\n{}".format(result, endmodule_token)
 
 
 class ModuleRename(BaseCode):

@@ -1,0 +1,27 @@
+formula max_x = 9;
+formula max_y = 9;
+formula init_x = 0;
+formula init_y = 0;
+formula init_direction = 0;
+formula max_direction = 4;
+
+module Taxi
+  x : [0..max_x];
+  y : [0..max_y];
+  direction : [0..max_direction];
+
+  [move] x = 0 & y = 0 -> (x' = 1) & (y' = 0);
+[move] x = 1 & y = 0 -> (x' = 2) & (y' = 0);
+[move] x = 2 & y = 0 -> (x' = 3) & (y' = 0);
+[move] x = 3 & y = 0 -> (x' = 4) & (y' = 0);
+[move] x = 4 & y = 0 -> (x' = 5) & (y' = 0);
+[move] x = 5 & y = 0 -> (x' = 6) & (y' = 0);
+[move] x = 6 & y = 0 -> (x' = 7) & (y' = 0);
+[move] x = 7 & y = 0 -> (x' = 8) & (y' = 0);
+[move] x = 8 & y = 0 -> (x' = 9) & (y' = 0);
+
+endmodule
+
+init
+  x = init_x & y = init_y & direction = init_direction
+endinit

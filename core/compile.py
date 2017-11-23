@@ -33,7 +33,6 @@ class TaxiCompiler(PrismTemplateVisitor):
 
         model = None
         common_declarations = None
-        module_declarations = None
         init_declaration = None
 
         if model_node is not None:
@@ -42,8 +41,7 @@ class TaxiCompiler(PrismTemplateVisitor):
         if common_node is not None:
             common_declarations = self.visit(common_node)
 
-        if modules_node is not None:
-            module_declarations = self.visit(modules_node)
+        module_declarations = self.visit(modules_node)
 
         if init_node is not None:
             init_declaration = self.visit(init_node)

@@ -85,6 +85,17 @@ class Paranthesis:
         return '('+str(self.expression)+')'
 
 
+class Brackets:
+    def __init__(self, expression):
+        if expression is None:
+            raise TypeError("Unexpected none expression inside paranthesis")
+
+        self.expression = expression
+
+    def __str__(self):
+        return '['+str(self.expression)+']'
+
+
 class Newline:
     def __init__(self, expression):
         self.expression = expression

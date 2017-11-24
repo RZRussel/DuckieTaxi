@@ -1,5 +1,5 @@
 from pygraph.classes.digraph import digraph
-
+from typing import List
 
 class MapSpecification:
     def __init__(self, graph: digraph, max_x: int, max_y: int):
@@ -32,3 +32,12 @@ class OrderSpecification:
     @property
     def finish(self):
         return self._finish
+
+
+class LogSpecification:
+    def __init__(self, states: List):
+        self._states = states
+
+    @property
+    def states(self):
+        return self._states

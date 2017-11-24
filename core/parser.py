@@ -1,4 +1,4 @@
-from core.specification import MapSpecification, OrderSpecification
+from core.specification import MapSpecification, OrderSpecification, LogSpecification
 from pygraph.classes.digraph import digraph
 
 
@@ -71,3 +71,31 @@ class OrderParser(BaseParser):
     @property
     def specification(self) -> OrderSpecification:
         return self._specification
+
+
+class LogParser(BaseParser):
+    def __init__(self, path: str, var_count: int):
+        self._var_count = var_count
+        super().__init__(path)
+
+    def _parse(self, file):
+        states = []
+        for line in file:
+            state = line.split()
+
+            if len(state) != self._var_count:
+                raise ValueError("Parsed number of variables is invalid: {} expected".format(str(self._var_count)))
+
+            state = list(map(lambda v: self._parse_int(v), state))
+            states.append(state)
+
+        self._log_specification = LogSpecification(states)
+
+    @property
+    def log_specification(self):
+        return self._log_specification
+
+    @property
+    def var_count(self):
+        return self._var_count
+

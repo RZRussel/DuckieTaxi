@@ -35,11 +35,34 @@ class ExpressionBuilder:
     def append_iff(self, expression):
         self.expression = BinaryOperation("<=>", self.expression, expression)
 
+    def wrap_tl_always(self):
+        self.wrap_brackets()
+        self.expression = UnaryOperation("A", self.expression)
+
+    def wrap_tl_exist(self):
+        self.wrap_brackets()
+        self.expression = UnaryOperation("E", self.expression)
+
+    def wrap_tl_globally(self):
+        self.wrap_paranthesis()
+        self.expression = UnaryOperation("G", self.expression)
+
+    def wrap_tl_eventually(self):
+        self.wrap_paranthesis()
+        self.expression = UnaryOperation("F", self.expression)
+
+    def wrap_tl_next(self):
+        self.wrap_paranthesis()
+        self.expression = UnaryOperation("X", self.expression)
+
     def wrap_next(self):
         self.expression = Identifier("{}\'".format(str(self.expression)))
 
     def wrap_paranthesis(self):
         self.expression = Paranthesis(self.expression)
+
+    def wrap_brackets(self):
+        self.expression = Brackets(self.expression)
 
     def append_eq(self, expression):
         self.expression = BinaryOperation("=", self.expression, expression)

@@ -1,1 +1,1 @@
-E [ F (x = 9 & y = 0)]
+x = 0 & y = 0 & direction = 0 & E[X(x = 1 & y = 0 & direction = 0 & E[X(x = 2 & y = 0 & direction = 0 & E[X(x = 3 & y = 0 & direction = 0 & E[X(x = 4 & y = 0 & direction = 0 & E[X(x = 5 & y = 0 & direction = 0 & E[X(x = 6 & y = 1 & direction = 0 & E[X(x = 7 & y = 0 & direction = 0 & E[X(x = 8 & y = 0 & direction = 0 & E[X(x = 9 & y = 0 & direction = 0)])])])])])])])])]

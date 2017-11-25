@@ -2,45 +2,9 @@ from core.specification import MapSpecification, OrderSpecification
 from pygraph.algorithms import minmax
 from core.expression_builder import ExpressionBuilder, GuardBuilder
 from core.base_expression import *
-from enum import Enum
 
 
 class TaxiGenerator:
-    class Direction(Enum):
-        RIGHT = 0
-        UP = 1
-        LEFT = 2
-        DOWN = 3
-
-        @staticmethod
-        def direction_from(x_prev: int, y_prev: int, x_next: int, y_next: int):
-            if x_prev < x_next and y_prev == y_next:
-                return TaxiGenerator.Direction.RIGHT
-            elif x_prev < x_next and y_prev < y_next:
-                return TaxiGenerator.Direction.UP
-            elif x_prev < x_next and y_prev > y_next:
-                return TaxiGenerator.Direction.DOWN
-            elif x_prev > x_next and y_prev == y_next:
-                return TaxiGenerator.Direction.LEFT
-            elif x_prev > x_next and y_prev < y_next:
-                return TaxiGenerator.Direction.UP
-            elif x_prev < x_next and y_prev > y_next:
-                return TaxiGenerator.Direction.DOWN
-
-            raise ValueError("Start and finish states must be different")
-
-        @staticmethod
-        def direction_to(x_prev: int, y_prev: int, x_next: int, y_next: int):
-            if x_prev < x_next:
-                return TaxiGenerator.Direction.RIGHT
-            elif x_prev > x_next:
-                return TaxiGenerator.Direction.LEFT
-
-            if y_prev < y_next:
-                return TaxiGenerator.Direction.UP
-            elif y_prev > y_next:
-                return TaxiGenerator.Direction.DOWN
-
     def __init__(self, map_spec: MapSpecification, order_spec: OrderSpecification):
         self._map_spec = map_spec
         self._order_spec = order_spec

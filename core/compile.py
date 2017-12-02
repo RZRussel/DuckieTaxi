@@ -7,6 +7,7 @@ from core.expression import *
 from core.expression_builder import *
 from core.specification import LogSpecification
 
+
 class TaxiCompiler(PrismTemplateVisitor):
     def __init__(self, generator: Any, template_path: str):
         self._generator = generator

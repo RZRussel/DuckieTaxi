@@ -1,0 +1,18 @@
+const int max_id = 7;
+const int init_id = 7;
+
+module Taxi
+  id : [0..max_id];
+
+  [move] id = 7 -> (id' = 6);
+[move] id = 6 -> (id' = 5);
+[move] id = 5 -> (id' = 4);
+[move] id = 4 -> (id' = 3);
+[move] id = 3 -> (id' = 2);
+[move] id = 2 -> (id' = 1);
+
+endmodule
+
+init
+  id = init_id
+endinit

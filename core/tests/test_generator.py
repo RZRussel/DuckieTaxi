@@ -3,11 +3,11 @@ from unittest import TestCase
 from antlr4 import CommonTokenStream, InputStream
 from io import StringIO
 
-from core.generator import TaxiGenerator
+from core.generator import TaxiGenerator, TagsGenerator
 from core.grammar.PrismTemplateLexer import PrismTemplateLexer
 from core.grammar.PrismTemplateParser import PrismTemplateParser
 from core.grammar.listeners import PrismErrorListener
-from core.parser import MapParser, OrderParser
+from core.parser import MapParser, OrderParser, TagsParser
 
 
 class TestTaxiGenerator(TestCase):
@@ -39,4 +39,26 @@ class TestTaxiGenerator(TestCase):
 
         parser.guard_declarations()
 
+        self.assertTrue(len(error_listener.msg_list) == 0)
+
+
+class TestTagsGenerator(TestCase):
+    tags_path = "test_tags"
+    tags_template_path = "test_tags_template.prism"
+
+    def test_move(self):
+        tags_parser = TagsParser(self.tags_path)
+        generator = TagsGenerator(tags_parser.specification)
+
+        input_stream = InputStream(generator.move())
+        output_stream = StringIO()
+        lexer = PrismTemplateLexer(input_stream, output=output_stream)
+        stream = CommonTokenStream(lexer)
+        parser = PrismTemplateParser(stream)
+
+        error_listener = PrismErrorListener()
+        parser.removeErrorListeners()
+        parser.addErrorListener(error_listener)
+
+        parser.guard_declarations()
         self.assertTrue(len(error_listener.msg_list) == 0)

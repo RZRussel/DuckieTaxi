@@ -1,7 +1,8 @@
-from core.specification import MapSpecification, OrderSpecification
+from core.specification import MapSpecification, OrderSpecification, TagsSpecification
 from pygraph.algorithms import minmax
 from core.expression_builder import ExpressionBuilder, GuardBuilder
 from core.base_expression import *
+from core.program import VAR_PREFIX
 
 
 class TaxiGenerator:
@@ -18,8 +19,8 @@ class TaxiGenerator:
         self._raise_if_invalid()
 
         action_label = "move"
-        x_id = "x"
-        y_id = "y"
+        x_id = "{}1".format(VAR_PREFIX)
+        y_id = "{}2".format(VAR_PREFIX)
 
         guard_builder = GuardBuilder(action_label)
         for i in range(1, len(self._path)):
@@ -91,6 +92,49 @@ class TaxiGenerator:
             self._path.reverse()
         else:
             self._path = None
+
+    def _raise_if_invalid(self):
+        if not self.can_satisfy_order():
+            raise ValueError("Can't build root automaton")
+
+
+class TagsGenerator:
+    def __init__(self, specification: TagsSpecification):
+        self._specification = specification
+
+    def can_satisfy_order(self):
+        return len(self._specification.tags) > 0
+
+    def move(self) -> str:
+        self._raise_if_invalid()
+
+        action_label = "move"
+        tag_id = "{}1".format(VAR_PREFIX)
+
+        guard_builder = GuardBuilder(action_label)
+
+        for i in range(1, len(self._specification.tags)):
+            cond_builder = ExpressionBuilder(Identifier(tag_id))
+            cond_builder.append_eq(self._specification.tags[i - 1])
+
+            new_state_builder = ExpressionBuilder(Identifier(tag_id))
+            new_state_builder.wrap_next()
+            new_state_builder.append_eq(Integer(self._specification.tags[i]))
+            new_state_builder.wrap_paranthesis()
+
+            guard_builder.add_guard(cond_builder.expression, new_state_builder.expression)
+
+        return guard_builder.build()
+
+    def max_id(self):
+        self._raise_if_invalid()
+
+        return max(self._specification.tags)
+
+    def init_id(self):
+        self._raise_if_invalid()
+
+        return self._specification.tags[0]
 
     def _raise_if_invalid(self):
         if not self.can_satisfy_order():

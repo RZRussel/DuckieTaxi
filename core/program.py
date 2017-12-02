@@ -1,6 +1,7 @@
 from typing import List
 from core.grammar.PrismTemplateLexer import PrismTemplateLexer
 
+VAR_PREFIX = "v"
 
 class BaseCode:
     @staticmethod

@@ -5,7 +5,6 @@ from core.grammar.PrismTemplateVisitor import PrismTemplateVisitor
 from core.program import *
 from core.expression import *
 from core.expression_builder import *
-from core.specification import LogSpecification
 
 
 class TaxiCompiler(PrismTemplateVisitor):
@@ -406,35 +405,3 @@ class TaxiCompiler(PrismTemplateVisitor):
             return Identifier(ctx.getText())
 
         raise ValueError("Unexpected expression")
-
-
-class TaxiPropertyCompiler:
-    def __init__(self, log_specification: LogSpecification):
-        self._log_specification = log_specification
-
-    def compile(self) -> ExpressionBuilder:
-        return self._process_states(self._log_specification.states)
-
-    def _process_states(self, states: List) -> ExpressionBuilder:
-        state = states[0]
-
-        builder = ExpressionBuilder("x")
-        builder.append_eq(Integer(state[0]))
-
-        y_builder = ExpressionBuilder("y")
-        y_builder.append_eq(Integer(state[1]))
-
-        dir_builder = ExpressionBuilder("direction")
-        dir_builder.append_eq(Integer(state[2]))
-
-        builder.append_and(y_builder.expression)
-        builder.append_and(dir_builder.expression)
-
-        if len(states) > 1:
-            next_builder = self._process_states(states[1:])
-            next_builder.wrap_tl_next()
-            next_builder.wrap_tl_exist()
-
-            builder.append_and(next_builder.expression)
-
-        return builder

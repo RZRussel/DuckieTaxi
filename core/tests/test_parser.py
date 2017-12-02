@@ -3,8 +3,7 @@ from antlr4 import ParseTreeWalker, CommonTokenStream, FileStream
 from core.grammar.PrismTemplateLexer import PrismTemplateLexer
 from core.grammar.PrismTemplateParser import PrismTemplateParser
 from core.grammar.listeners import PrismReplacementsGatherer
-from core.parser import MapParser
-from core.parser import OrderParser
+from core.parser import MapParser, OrderParser, TagsParser
 
 
 class TestTemplateParser(TestCase):
@@ -57,3 +56,11 @@ class TestOrderParser(TestCase):
 
         self.assertTrue(order_parser.specification.start == (0, 0))
         self.assertTrue(order_parser.specification.finish == (9, 0))
+
+
+class TestTagsParser(TestCase):
+    tags_path = "test_tags"
+
+    def test_parsing(self):
+        tags_parser = TagsParser(self.tags_path)
+        self.assertTrue([i for i in range(1, 8)] == tags_parser.specification.tags)

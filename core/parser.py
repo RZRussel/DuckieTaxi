@@ -115,3 +115,13 @@ class LogParser(BaseParser):
     @property
     def var_count(self):
         return self._var_count
+
+
+class PRISMResult(BaseParser):
+    def _parse(self, file):
+        lines = file.readlines()
+        self._success = len(lines) == 2 and lines[0].strip() == "Result" and lines[1].strip() == "true"
+
+    @property
+    def success(self):
+        return self._success

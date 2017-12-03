@@ -31,3 +31,31 @@ case of taxi service is order from the user (source and destination in case of g
 Example of model construction:
 
 ```python3 taxi.py -m resources/grid_based/town -s resources/grid_based/order -t resources/grid_based/taxi.prism```
+
+In result, ```out_taxi.prism``` file is created where each tag replaced with corresponding expression that depends on parameters.
+
+Other features can be found using help flag ```-h```.
+
+*** 2. Property generation ***
+
+When the service is completed Duckie bot creates a log in csv format where each component of a row correponds to the variable in the model. Thus, we process the log and generate a property to verify using PRISM. Currently, there are 2 types of properties: weak and strong. Strong properties insist that neighbor rows in the log correspond to the neighbor states in the automata of the model. From the other hand, weak property just insures if we took neighbor rows in the log than there is a path between corresponding states in the automata of the model.
+
+Example of property generation:
+
+```python3 log2prop.py -l resources/grid_based/service.log -p resources/grid_based/service.prop --weak```
+
+In result, ```service.prop``` file containing the property will be generated.
+
+The property can be verified manually by [running](http://www.prismmodelchecker.org/manual/RunningPRISM/StartingPRISM) PRISM model checker with model and property files as input.
+
+Other features can be found using help flag ```-h```.
+
+*** 3. Validation ***
+
+However, if there is a model and a log than correspondance can be checked without running model checker explicitly:
+
+```python3 validate.py -m resources/grid_based/service.prism -l resources/grid_based/service.log```
+
+Make sure that model checker's executable file is reachable from the command line simply by name ```prism``` in other case use ```-p``` flag to provide path to it.
+
+Other features can be found using help flag ```-h```.

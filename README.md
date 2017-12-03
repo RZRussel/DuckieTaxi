@@ -20,7 +20,7 @@ There are 3 scripts of interests that allows: model construction from the templa
 property generation from the log (```log2prop.py```) and 
 validation of the fact that log corresponds to the constructed model (```validate.py```).
 
-*** 1. Model construction ***
+## 1. Model construction
 
 Usually multi-agent systems are parametrized and symbolic representation of the actions is infeasible to provide by hand 
 in model checker language. To attack the problem the model construction component is designed that is able to build final 
@@ -36,7 +36,7 @@ In result, ```out_taxi.prism``` file is created where each tag replaced with cor
 
 Other features can be found using help flag ```-h```.
 
-*** 2. Property generation ***
+## 2. Property generation
 
 When the service is completed Duckie bot creates a log in csv format where each component of a row correponds to the variable in the model. Thus, we process the log and generate a property to verify using PRISM. Currently, there are 2 types of properties: weak and strong. Strong properties insist that neighbor rows in the log correspond to the neighbor states in the automata of the model. From the other hand, weak property just insures if we took neighbor rows in the log than there is a path between corresponding states in the automata of the model.
 
@@ -50,7 +50,7 @@ The property can be verified manually by [running](http://www.prismmodelchecker.
 
 Other features can be found using help flag ```-h```.
 
-*** 3. Validation ***
+## 3. Validation
 
 However, if there is a model and a log than correspondance can be checked without running model checker explicitly:
 

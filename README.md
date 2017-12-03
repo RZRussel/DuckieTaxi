@@ -2,7 +2,7 @@
 Project designed to allow model construction for Duckietown bot either to navigate through grid based map or using sequence of 
 april tags. Moreover there is an opportunities to check correctness of properties in Temporal logic notation using PRISM model
 checker and generate properties from the bot's log. The project is implemented as part of the smart city system 
-proptotype that allows taxi service ordering through Ethereum smartcontract with automatic validation of liability performance.
+[proptotype](https://github.com/XomakNet/AiraDuckietownPrototype) that allows taxi service ordering through Ethereum smartcontract with automatic validation of liability performance.
 
 # Installation
 

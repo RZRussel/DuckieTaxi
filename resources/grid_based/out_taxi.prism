@@ -19,6 +19,7 @@ module Taxi
 [move] v1 = 6 & v2 = 0 -> (v1' = 7) & (v2' = 0);
 [move] v1 = 7 & v2 = 0 -> (v1' = 8) & (v2' = 0);
 [move] v1 = 8 & v2 = 0 -> (v1' = 9) & (v2' = 0);
+[move] v1 = 9 & v2 = 0 -> true;
 
 endmodule
 

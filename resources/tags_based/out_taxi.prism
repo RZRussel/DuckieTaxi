@@ -10,6 +10,7 @@ module Taxi
 [move] v1 = 4 -> (v1' = 3);
 [move] v1 = 3 -> (v1' = 2);
 [move] v1 = 2 -> (v1' = 1);
+[move] v1 = 1 -> true;
 
 endmodule
 
